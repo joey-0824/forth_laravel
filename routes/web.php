@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/search/{id}', function ($id) {
    return response('Post: ' . $id);
 })->where('id', '[0-9]+');
+
+Route::get('/search', function (\Illuminate\Http\Request $request) {
+    dd($request);
+});
