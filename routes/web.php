@@ -14,7 +14,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('listing', [
+        'title' => 'Total Listing',
+        'listing' => [
+            [
+                'id' => 1,
+                'title' => 'title one',
+                'description' => 'des 1'
+            ],
+            [
+                'id' => 2,
+                'title' => 'title two',
+                'description' => 'des 2'
+            ],
+
+        ],
+    ]);
 });
 
 Route::get('/search/{id}', function ($id) {
