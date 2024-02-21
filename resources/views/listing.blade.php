@@ -1,6 +1,4 @@
-<h1>{{$title}}</h1>
+<h1>Listing</h1>
 
-@foreach($listing as $item)
-    <h2>{{$item['title']}}</h2>
-    <p>{{$item['description']}}</p>
-@endforeach
+<h2>{{$listing['title']}}</h2>
+<p>{{$listing['description']}}</p>
