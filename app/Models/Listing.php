@@ -2,35 +2,10 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
 
-class Listing
+class Listing extends Model
 {
-    public static function get_all() {
-        return [
-            [
-                'id' => 1,
-                'title' => 'title one',
-                'description' => 'des 1'
-            ],
-            [
-                'id' => 2,
-                'title' => 'title two',
-                'description' => 'des 2'
-            ]
-        ];
-    }
-
-    public static function find($id) {
-        $all_listing =  self::get_all();
-        foreach ($all_listing as $item) {
-            if ($item['id'] == $id) {
-                return $item;
-            }
-        }
-    }
+    use HasFactory;
 }
