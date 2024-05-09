@@ -42,6 +42,7 @@ class ListController extends Controller
             'website' => 'required',
             'email' => ['required', 'email'],
             'tags' => 'required',
+            'description' => 'required'
         ]);
 
         Listing::create($formFields);
