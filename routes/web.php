@@ -14,15 +14,23 @@ use App\Http\Controllers\ListController;
 |
 */
 
+// route will check the link from top to bottom, so make sure upper one will not block bottom ones
+
+// all listings
 Route::get('/', [ListController::class, 'index']);
 
+//
+//Route::get('/search/{id}', function ($id) {
+//    return response('Post: ' . $id);
+//})->where('id', '[0-9]+');
+//
+//Route::get('/search', function (\Illuminate\Http\Request $request) {
+//    dd($request);
+//});
+
+// show create listing form
+Route::get('/listings/create', [ListController::class, 'create']);
+
+
+// single listing
 Route::get('/listings/{listing}', [ListController::class, 'show']);
-
-
-Route::get('/search/{id}', function ($id) {
-    return response('Post: ' . $id);
-})->where('id', '[0-9]+');
-
-Route::get('/search', function (\Illuminate\Http\Request $request) {
-    dd($request);
-});
