@@ -46,6 +46,6 @@ class ListController extends Controller
 
         Listing::create($formFields);
 
-//        return view('listings.index');
+        return redirect('/');
     }
 }
