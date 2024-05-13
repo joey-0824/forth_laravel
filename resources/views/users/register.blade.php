@@ -10,7 +10,8 @@
             <p class="mb-4">Create an account to post gigs</p>
         </header>
 
-        <form action="/users">
+        <form action="/users" enctype="multipart/form-data">
+            @csrf
             <div class="mb-6">
                 <label for="name" class="inline-block text-lg mb-2">
                     Name
@@ -20,6 +21,9 @@
                     class="border border-gray-200 rounded p-2 w-full"
                     name="name"
                 />
+                @error('name')
+                <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                @enderror
             </div>
 
             <div class="mb-6">
@@ -31,10 +35,9 @@
                     class="border border-gray-200 rounded p-2 w-full"
                     name="email"
                 />
-                <!-- Error Example -->
-                <p class="text-red-500 text-xs mt-1">
-                    Please enter a valid email
-                </p>
+                @error('email')
+                <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                @enderror
             </div>
 
             <div class="mb-6">
@@ -49,11 +52,14 @@
                     class="border border-gray-200 rounded p-2 w-full"
                     name="password"
                 />
+                @error('password')
+                <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                @enderror
             </div>
 
             <div class="mb-6">
                 <label
-                    for="password2"
+                    for="password_confirmation"
                     class="inline-block text-lg mb-2"
                 >
                     Confirm Password
@@ -61,8 +67,11 @@
                 <input
                     type="password"
                     class="border border-gray-200 rounded p-2 w-full"
-                    name="password2"
+                    name="password_confirmation"
                 />
+                @error('password_confirmation')
+                <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                @enderror
             </div>
 
             <div class="mb-6">
@@ -77,7 +86,7 @@
             <div class="mt-8">
                 <p>
                     Already have an account?
-                    <a href="login.html" class="text-laravel"
+                    <a href="/login" class="text-laravel"
                     >Login</a
                     >
                 </p>
