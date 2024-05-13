@@ -30,7 +30,7 @@ Route::get('/', [ListController::class, 'index']);
 //});
 
 // show create listing form
-Route::get('/listings/create', [ListController::class, 'create']);
+Route::get('/listings/create', [ListController::class, 'create'])->middleware('auth');
 
 // store new listing item
 Route::post('/listings', [ListController::class, 'store']);
@@ -58,7 +58,7 @@ Route::post('/users', [UserController::class, 'store']);
 Route::post('/logout', [UserController::class, 'logout']);
 
 // user login page
-Route::get('/login', [UserController::class, 'login']);
+Route::get('/login', [UserController::class, 'login'])->name('login');
 
 // user authenticate login
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
