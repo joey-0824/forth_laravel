@@ -1,5 +1,7 @@
 @extends('layout')
 @section('content')
+
+{{--    https://github.com/bradtraversy/laragigs/blob/main/_laragigs_theme/register.html--}}
     <div
         class="bg-gray-50 border border-gray-200 p-10 rounded max-w-lg mx-auto mt-24"
     >
