@@ -49,7 +49,7 @@ Route::get('/listings/{listing}', [ListController::class, 'show']);
 
 
 // show user register form page
-Route::get('/register', [UserController::class, 'create']);
+Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
 // create a new user
 Route::post('/users', [UserController::class, 'store']);
