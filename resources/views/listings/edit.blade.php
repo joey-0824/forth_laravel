@@ -122,6 +122,12 @@
                     class="border border-gray-200 rounded p-2 w-full"
                     name="logo"
                 />
+
+                <img
+                    class="w-48 mr-6 mb-6"
+                    src="{{$item->logo ? asset('storage/' . $item->logo) : asset('images/no-image.png')}}"
+                    alt=""
+                />
                 @error('logo')
                 <p class="text-red-500 text-ms mt-1">{{$message}}</p>
                 @enderror
