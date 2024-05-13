@@ -53,4 +53,11 @@ class ListController extends Controller
 
         return redirect('/')->with('message', 'New Listing Created Successfully.');
     }
+
+    // edit listing form
+    public function edit(Listing $listing) {
+        return view('listings.edit', [
+            'item' => $listing
+        ]);
+    }
 }
